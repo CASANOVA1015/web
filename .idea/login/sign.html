@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+
+    <link rel="stylesheet" type="text/css" href="sign.css">
+    <script type="text/javascript">
+		//定义标记，定义成全局变量
+		var nameFlag=pwdFlag=emailFlag=ageFlag=phoneFlag=false;
+			function $(id){
+				return document.getElementById(id);
+			}
+			function check(){
+				//对标记进行判断
+				if(nameFlag&&pwdFlag&&emailFlag&&ageFlag&&phoneFlag){
+					alert("恭喜您，注册成功！");
+					return true;
+				}else{
+					alert("注册失败！");
+					return false;
+				}
+			}
+			//封装一下代码
+			/*
+			 focus()函数：让光标停留在文本框里面，用户下一次不用再次点击文本框了
+			 */
+
+			window.onload= function(){
+				//获取DOM对象
+				var oname=$("name");
+
+				var oemail=$("email");
+				var ophone=$("phone");
+
+				var os1=$('s1');
+				var os2=$('s2');
+				var os3=$('s3');
+				var os4=$('s4');
+				var os5=$('s5');
+				var os6=$('s6');
+				//定义正则表达式
+				/*用户名:至少6位,以字母\下划线\$开头,后接数字*/
+				var box_name=/^[a-zA-Z_$]\w{5}/;
+				/*密码至少6位*/
+				var box_pwd=/\w{6}/;
+				/*年龄必须16~99岁
+				 */
+				var box_age=/^(1[6-9])|([2-9]\d)$/;
+				/* 邮箱验证：
+	   			   1)以至少3位字母或数字开头
+   				   2)之后必须有一位@
+   				   3)@后必须有1位是小写的字母或数字
+   				   4)之后必须有一位.符号
+   				   5).符号后面由3位小写字母组成
+   				   6)之后可能又有.与2位小写字母结束*/
+   				var box_email=/^\w{3,}@[a-z0-9]+\.[a-z]{3}(\.[a-z]{2})?$/;
+
+
+   				  /*手机号:  以1开头，必须是11位数字。*/
+   				 var box_phone=/^1\d{10}$/;
+   				 //人性化提示
+   				 oname.onblur=function(){
+   				 //trim():去掉空格
+   				if(box_name.test(oname.value.trim())){
+   				 	afterCheck(this,"用户名输入正确","green",false);
+   				 	nameFlag=true;
+   				 }else{
+   				 	afterCheck(this,"用户格式错误","red",true);
+   				 }
+   			}
+
+
+
+   				 oemail.onblur=function(){
+   				 		 //trim():去掉空格
+   				 if(box_email.test(oemail.value.trim())){
+   				 	os5.innerHTML="邮箱输入正确";
+   				 	os5.style.color="green";
+   				 	emailFlag=true;
+   				}else{
+   					os5.innerHTML="邮箱格式错误";
+   				 	os5.style.color="red";
+   				}
+   			}
+
+   				ophone.onblur=function(){
+   				 		 //trim():去掉空格
+   				 if(box_phone.test(ophone.value.trim())){
+   				 	os6.innerHTML="手机号输入正确";
+   				 	os6.style.color="green";
+   				 	phoneFlag=true;
+   				}else{
+   					os6.innerHTML="手机号格式错误";
+   				 	os6.style.color="red";
+   				}
+   			}
+   				return true;
+   		}
+
+
+		</script>
+</head>
+<body>
+<div id="list">
+    <h1>sign</h1>
+    <form method="post">
+
+        <input type="text" required="required" placeholder="姓名" id="name"></input>
+        <span id="s1">请输入用户名</span>
+        <input type="text" required="required" placeholder="电话" id="phone"></input>
+        <span id="s6">手机号必须是11为数字</span>
+        <input type="text" required="required" placeholder="邮箱" id="email"></input>
+        <span id="s5">邮箱必须符合要求</span>
+        <input type="text" required="required" placeholder="住址" id="user"></input>
+        <input type="text" required="required" placeholder="qq号" id="qq"></input>
+
+
+
+
+        <input type="submit" id="loginbottom" value="登录" onclick="log()">
+        <input type="sb" id="signupbottom" value="注册" onclick="sign()">
+
+    </form>
+</div>
+
+</body>
+</html>

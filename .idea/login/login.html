@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <script>
+        function log() {
+            const user = document.getElementById("user").value;
+            const password = document.getElementById("password").value;
+            //查询数据，确认登录是否成功
+            if(user === "root" && password === "root")//测试用户
+                window.location.href="list.html";
+            else
+                alert("仅支持测试用户登录");
+        }
+        function sign() {
+            window.location.href="sign.html";
+        }
+    </script>
+</head>
+<body>
+<div id="login">
+    <h1>Login</h1>
+    <form method="post">
+
+        <input type="text" required="required" placeholder="用户名" id="user"></input>
+        <input type="password" required="required" placeholder="密码" id="password"></input>
+
+        <input type="lb" id="loginbottom" value="登录" onclick="log()">
+        <input type="sb" id="signupbottom" value="注册" onclick="sign()">
+
+    </form>
+</div>
+</body>
+</html>
