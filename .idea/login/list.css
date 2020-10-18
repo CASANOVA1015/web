@@ -31,8 +31,10 @@ body {
 }
 
 h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
+    color: #ff4500;
+        text-shadow: 0 0 20px;
+        letter-spacing: 1px;
+        text-align: center;
 }
 
 input[type = "text"]{
@@ -70,22 +72,10 @@ input[type = "password"]{
     background-color: #ffdab9;
 }
 
-input[type = "lb"]{
-    width: 125px;
-    min-height: 20px;
-    display: inline-block;
-    background-color: #ff8c00;
-    border: 1px solid #3762bc;
-    color: #fff;
-    padding: 5px 10px;
-    font-size: 15px;
-    line-height: normal;
-    border-radius: 5px;
-    margin: 0;
-}
 
-input[type = "sb"]{
-    width: 125px;
+
+input[type = "bottom"]{
+    width: 75px;
     min-height: 20px;
     display: inline-block;
     background-color: #ff8c00;

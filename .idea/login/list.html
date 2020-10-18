@@ -1,45 +1,53 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <title>list</title>
-
     <link rel="stylesheet" type="text/css" href="list.css">
-    <script>
-        function log() {
-            const user = document.getElementById("user").value;
-            const password = document.getElementById("password").value;
-            //查询数据，确认登录是否成功
-            if(user === "root" && password === "root")//测试用户
-                window.location.href="list.html";
-            else
-                alert("仅支持测试用户登录");
-        }
-        function sign() {
-            window.location.href="sign.html";
-        }
-    </script>
 </head>
 <body>
 <div id="list">
-    <h1>Login</h1>
-    <form method="post">
+    <h1>list</h1>
+<!-- tr表示行，td表示列，border表示边框，width宽度，height高度,cellspacing单元格之间的举例 -->
+<!-- bgcolor表示背景颜色，background表示背景图片 -->
+<!-- 表格的数据写在td之间 align=center表示居中，如果放在table标签让整个表格居中，如果放在tr让当前行内容居中 -->
+<table align="center" border="1"  cellspacing="0">
+    <!-- h1标题标签 -->
 
-        <input type="text" required="required" placeholder="用户名" id="user"></input>
-        <input type="password" required="required" placeholder="密码" id="password"></input>
-        <input type="text" required="required" placeholder="用户名" id="user"></input>
-        <input type="text" required="required" placeholder="用户名" id="user"></input>
-        <input type="text" required="required" placeholder="用户名" id="user"></input>
-        <input type="text" required="required" placeholder="用户名" id="user"></input>
+    <!-- tr表示行 -->
+    <tr bgcolor="blanchedalmond" height="2.5" align="center">
+        <!-- td表示列 -->
+        <td width="100">编号</td>
+        <td width="100">姓名</td>
+        <td width="100">电话</td>
+        <td width="100">邮箱</td>
+        <td width="100">住址</td>
+        <td width="100">QQ</td>
+    </tr>
+    <tr bgcolor="azure" height="2.5" align="center">
+        <td width="100">01</td>
+        <td width="100">2</td>
+        <td width="100">3</td>
+        <td width="100">4</td>
+        <td width="100">5</td>
+        <td width="100">6</td>
+    </tr>
+    <tr bgcolor="azure" height="2.5" align="center">
 
+    </tr>
+    <tr bgcolor="azure" height="2.5" align="center">
 
+    </tr>
+    <tr bgcolor="azure" height="2.5" align="center">
 
+    </tr>
+    <tr bgcolor="azure" height="2.5" align="center">
 
-        <input type="lb" id="loginbottom" value="登录" onclick="log()">
-
-
-    </form>
+    </tr>
+</table>
+    <input type="bottom" id="addbottom" value="add" >
+    <input type="bottom" id="delbottom" value="del" >
+    <input type="bottom" id="changebottom" value="change" >
 </div>
 </body>
 </html>

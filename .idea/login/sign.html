@@ -13,7 +13,7 @@
 			}
 			function check(){
 				//对标记进行判断
-				if(nameFlag&&pwdFlag&&emailFlag&&ageFlag&&phoneFlag){
+				if(emailFlag&&phoneFlag){
 					alert("恭喜您，注册成功！");
 					return true;
 				}else{
@@ -102,11 +102,15 @@
 		</script>
 </head>
 <body>
-<div id="list">
+<div id="sign">
     <h1>sign</h1>
     <form method="post">
 
-
+        <!-- submit提交表单，对应的需要使用onsubmit事件       onsubmit一般都是在form标签上
+                    会触发check()函数验证。         onsubmit需要接收check()函数的返回值 :true/false
+                     true: 表单会提交                false:表单不提交              还需要在check()函数前面写return
+                     return true;        return false;   -->
+        <form action="http://www.baidu.com" onsubmit="return check();">
 
         <input type="text" required="required" placeholder="姓名" id="name"></input>
         <span id="s1">请输入用户名</span>
@@ -120,8 +124,8 @@
 
 
 
-        <input type="submit" id="loginbottom" value="登录" onclick="log()">
-        <input type="sb" id="signupbottom" value="注册" onclick="sign()">
+        <input type="submit" id="loginbottom" value="提交" onclick="log()">
+
 
     </form>
 </div>

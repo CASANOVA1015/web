@@ -14,7 +14,7 @@ body {
     background-color: #ffe4e1;
 }
 
-#list {
+#sign {
     position: absolute;
     top: 30%;
     left: 50%;
@@ -23,7 +23,7 @@ body {
     height: 300px;
 }
 
-#list h1 {
+#sign h1 {
     color: #ff4500;
     text-shadow: 0 0 20px;
     letter-spacing: 1px;
@@ -71,7 +71,7 @@ input[type = "password"]{
 }
 
 input[type = "submit"]{
-    width: 125px;
+    width: 300px;
     min-height: 20px;
     display: inline-block;
     background-color: #ff8c00;
@@ -84,20 +84,7 @@ input[type = "submit"]{
     margin: 0;
 }
 
-input[type = "sb"]{
-    width: 125px;
-    min-height: 20px;
-    display: inline-block;
-    background-color: #ff8c00;
-    border: 1px solid #3762bc;
-    color: #fff;
-    padding: 5px 10px;
-    font-size: 15px;
-    line-height: normal;
-    border-radius: 5px;
-    margin: 0;
 
-}
 .but {
     width: 300px;
     min-height: 20px;
